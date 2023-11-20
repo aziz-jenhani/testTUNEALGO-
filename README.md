@@ -9,7 +9,7 @@
 <br/>
 
 </h3>
-<div align="center" style="display: flex; justify-content: center;flex-direction: row; align-items: center; margin-top: 10px; height: 100vh;">
+<div align="center" style="display: flex; justify-content: center;flex-direction: row; align-items: center; margin-top: 10px;">
   <img alt="Demo" src="./assets/readme/pc1.png" style="width:650px; height: 500px;"/>
   <img alt="Demo" src="./assets/readme/pc2.png" style="width:650px; height: 500px;"/>
 </div>
