@@ -9,16 +9,16 @@
 <br/>
 
 </h3>
-<div align="center" style="flex">
+<div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
   <img alt="Demo" src="./assets/readme/pc1.png"/>
   <img alt="Demo" src="./assets/readme/pc2.png"/>
 </div>
-<h3 align="center" >
+<h3 align="center">
  Vue Tablette
 <br/>
 
 </h3>
-<div align="center" style="flex">
+<div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
   <img alt="Demo" src="./assets/readme/tab1.png"/>
   <img alt="Demo" src="./assets/readme/tab2.png"/>
 </div>
@@ -27,7 +27,7 @@
 <br/>
 
 </h3>
-<div align="center" style="flex">
+<div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
   <img alt="Demo" src="./assets/readme/mob1.png"/>
   <img alt="Demo" src="./assets/readme/mob2.png"/>
 </div>
