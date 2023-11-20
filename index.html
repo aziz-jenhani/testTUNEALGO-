@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&family=Neucha&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <title>Votre Titre</title>
+    <style>
+        .fixed-input {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      
+      z-index: 1000; /* Adjust the z-index as needed */
+      background-color: white;
+       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border-radius: 1rem;
+    }
+    </style>
+</head>
+
+<body class="bg-white sm:p-4 p-2 ">
+
+
+
+
+    <aside id="default-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 lg:block    hidden"
+        aria-label="Sidebar">
+        <h1 class="text-4xl titre p-5 text-orang ">TUNALGO</h1>
+
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 ">
+
+            <ul class="space-y-2 font-medium text-black">
+                <li class="  hover:text-orange-100 text-orang border rounded-md">
+                    <a href="#" class="flex items-center p-2 gap-2  rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+
+
+                        <span class="ms-3 ">Rechercher</span>
+                    </a>
+                </li>
+
+
+                <li class="  ">
+                    <a href="#" class="flex items-center p-2 gap-2  rounded-lg  text-black hover:text-orang">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+
+
+
+                        <span class="ms-3g">Favoris</span>
+                    </a>
+                </li>
+                <li class="  hover:text-orang">
+                    <a href="#" class="flex items-center p-2 gap-2  rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="h-6 w-6">
+                            <rect width="23" height="23" fill="none" rx="0" ry="0" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 6v12m6-6H6" />
+                        </svg>
+
+
+
+
+                        <span class="ms-3 ">Publier</span>
+                    </a>
+                </li>
+                <li class="  hover:text-orang">
+                    <a href="#" class="flex items-center p-2 gap-2  rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                        </svg>
+
+
+                        <span class="ms-3 ">Messages</span>
+                    </a>
+                </li>
+                <li class="  hover:text-orang">
+                    <a href="#" class="flex items-center p-2 gap-2  rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+
+
+
+                        <span class="ms-3 ">Compte</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </aside>
+
+    <div class="lg:ml-64">
+        <nav
+            class=" lg:fixed lg:top-0 lg:p-4 lg:px-10 z-10  w-full   lg:right-0  flex flex-wrap justify-between items-center mx-auto border-b-2 gap-4  pb-2 bg-white">
+            <!-- Titre -->
+
+            <div     class="lg:hidden w-full flex justify-between items-center">
+                <h1 class="text-4xl titre pl-6 text-orang  ">TUNALGO</h1>
+                <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor" class="w-7 h-7 hover:text-orang">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                </div>
+            </div>
+            <div class="flex lg:items-center flex-col md:w-2/3 w-full md:mx-auto gap-1 md:p-0 p-4 bg-white ">
+                <div class="flex lg:items-center flex-col md:w-2/3 w-full md:mx-auto gap-1 md:p-0 p-4 bg-white" id="searchContainer">
+                    <div class="  md:mx-auto bg-white border rounded-lg shadow-lg shadow-gray-200 w-full">
+                        <div class="relative">
+                            <!-- Icône à l'intérieur de la bordure à gauche -->
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="w-5 h-5 text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                </svg>
+                            </div>
+                
+                            <!-- Icône à l'intérieur de la bordure à droite -->
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2">
+                                <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" class="w-6 h-6 text-gray-400">
+                                    <path d="M16 12 A4 4 0 0 1 12 16 A4 4 0 0 1 8 12 A4 4 0 0 1 16 12 z" />
+                                    <path
+                                        d="M13 4.069V2h-2v2.069A8.01 8.01 0 004.069 11H2v2h2.069A8.008 8.008 0 0011 19.931V22h2v-2.069A8.007 8.007 0 0019.931 13H22v-2h-2.069A8.008 8.008 0 0013 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z" />
+                                </svg>
+                            </div>
+                
+                            <!-- Champ de saisie -->
+                            <input type="text" placeholder="Rechercher"
+                                class="w-full py-2 pl-10 pr-8 border rounded-lg focus:outline-none focus:border-orange-500 placeholder:text-[#708190]" />
+                        </div>
+                
+                
+                    </div>
+                </div> 
+                     
+
+                <div class="mx-auto bg-white border-2 rounded-3xl shadow-2xl flex items-center gap-3 p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    <p class="text-md text-gray-700">Toute la France</p>
+                    <svg viewBox="0 0 1024 1024" fill="currentColor" height="1em" width="1em" class="text-gray-400">
+                        <path
+                            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z" />
+                    </svg>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="lg:block hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="w-7 h-7 hover:text-orang">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                </svg>
+            </div>
+
+        </nav>
+        <div class="lg:mt-28 overflow-hidden mt-5">
+            <h1 class="font-semibold text-xl text-black ">Top Catégories</h1>
+
+
+            <div class="flex overflow-x-auto space-x-4 mt-5 no-scrollbar">
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/vetement.jpg" class="bg-purple-200 h-full w-72 rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Vétement</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/voiture.jpg" class="bg-purple-200 h-full w-72  rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Voiture</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/informatique.avif" class="bg-purple-200 h-full w-72  rounded-lg "
+                            alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Informatique</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/salon.jpg" class="bg-purple-200 h-full w-72  rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Détente au salon</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/moto.jpg" class="bg-purple-200 h-full w-72  rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Voyage à moto</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/sport.jpg" class="bg-purple-200 h-full w-72  rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Esprit sportif</span>
+                </section>
+                <section class="flex-shrink-0 rounded-lg relative h-36 w-48 ">
+                    <span><img src="assets/vac.jpg" class="bg-purple-200 h-full w-72  rounded-lg " alt="" /></span>
+                    <span class="absolute bottom-2 left-2 w-full bg-opacity-50 text-white p-2">Vacances</span>
+                </section>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="mt-6 overflow-hidden">
+            <div class="flex items-center gap-2">
+                <h1 class="font-semibold text-xl text-black ">D'aprés vos dernières recherches</h1>
+                <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em" class="h-6 w-6 text-gray-500">
+                    <path
+                        d="M256 56C145.72 56 56 145.72 56 256s89.72 200 200 200 200-89.72 200-200S366.28 56 256 56zm0 82a26 26 0 11-26 26 26 26 0 0126-26zm64 226H200v-32h44v-88h-32v-32h64v120h44z" />
+                </svg>
+            </div>
+            <div class="flex gap-2 items-center ">
+                <p class="text-md">Locations</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+
+            </div>
+
+
+            <div class="flex overflow-x-auto space-x-4 mt-5 no-scrollbar overflow-y-hidden">
+                <section class="flex-shrink-0 rounded-lg h-96 w-56 relative">
+                    <span class="relative">
+                        <img src="assets/app5.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 6</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 3 piéces 55 m²</span>
+                    <p>
+                        <span class="text-green-600 font-semibold">1243 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+
+                    <span class="relative">
+                        <img src="assets/app6.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 2</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 2 piéces 60
+                        m²</span>
+                    <p>
+                        <span>1000 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+                    <span class="relative">
+                        <img src="assets/app4.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 4</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 5 piéces 30
+                        m²</span>
+                    <p>
+                        <span>900 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+                    <span class="relative">
+                        <img src="assets/app3.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 12</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 2 piéces 55
+                        m²</span>
+                    <p>
+                        <span>1400 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+                    <span class="relative">
+                        <img src="assets/app2.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 14</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 3 piéces 55
+                        m²</span>
+                    <p>
+                        <span>1243 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+                    <span class="relative">
+                        <img src="assets/app1.jpeg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 10</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 3 piéces 55
+                        m²</span>
+                    <p>
+                        <span class="text-green-600">1243 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-72 w-48 relative ">
+                    <span class="relative">
+                        <img src="assets/app5.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 2</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Appartement 3 piéces 55
+                        m²</span>
+                    <p>
+                        <span class="text-green-600">1243 $</span><br>
+                        Maison-Alfort 94700 12/02/2023 à 23:43
+                    </p>
+                </section>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+        <div class="mt-6 overflow-hidden">
+
+
+            <div class="flex items-center flex-row justify-start">
+                <div class=" flex gap-4 items-center  flex-wrap">
+                    <h1 class="font-bold text-xl text-black ">Annonces fraîchement publiées</h1>
+
+                    <div
+                        class="mx-auto bg-white border-2 border-gray-400 rounded-3xl shadow-2xl flex items-center gap-2 py-1 px-2">
+                        <svg viewBox="0 0 384 512" fill="currentColor" height="1em" width="1em" class="h-4 w-4">
+                            <path
+                                d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z" />
+                        </svg>
+                        <p class="text-md text-gray-700">Toute la France</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="grid 2xl:grid-cols-7 xl:grid-cols-5 mt-5  md:grid-cols-4  sm:grid-cols-3 grid-cols-2 gap-3 ">
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48 w-44   relative">
+                    <span class="relative">
+                        <img src="assets/pein.jpeg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 6</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class="text-green-600 font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+
+                    <span class="relative">
+                        <img src="assets/voit1.jpeg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 2</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class="text-green-600 font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+                    <span class="relative">
+                        <img src="assets/voiture.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 4</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class=" font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+                    <span class="relative">
+                        <img src="assets/cad.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 12</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class=" font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+                    <span class="relative">
+                        <img src="assets/voi3.jpg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 14</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class=" font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+                    <span class="relative">
+                        <img src="assets/voit1.jpeg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 10</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class="text-green-600 font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </section>
+                <section class="flex-shrink-0 rounded-lg h-96  smm:w-48  w-44   relative ">
+                    <span class="relative">
+                        <img src="assets/voi2.jpeg" class="bg-purple-200 h-60 w-full  rounded-md " alt="" />
+
+                        <div
+                            class="absolute left-2 bottom-8 w-16 h-8 border border-black rounded-3xl bg-black opacity-70 gap-1 flex text-white items-center">
+                            <svg viewBox="0 0 512 512" fill="currentColor" height="1em" width="1em"
+                                class="text-white h-4 w-8">
+                                <path
+                                    d="M149.1 64.8L138.7 96H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64h-74.7l-10.4-31.2C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 384c-53 0-96-43-96-96s43-96 96-96 96 43 96 96-43 96-96 96z" />
+                            </svg>
+                            <p> 2</p>
+                        </div>
+                    </span>
+                    <div class="absolute  top-2 right-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white hover:text-red-600 ">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div> <span class=" w-full bg-opacity-50 text-black font-semibold p-1">Lorem ipsum dolor sit</span>
+                    <p>
+                        <span class=" font-semibold">1243 $</span><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </section>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <footer class="fixed bottom-0 pb-5 left-0 z-40 w-full h-28  bg-gray-50 border-t border-gray-300 lg:hidden">
+            <div class="h-full px-3 py-4 overflow-y-hidden bg-gray-50 ">
+
+                <ul class="space-y-2 flex  items-center justify-center font-normal text-black sm:gap-3 gap-0">
+                    <li class="  hover:text-orange-100  text-orang border rounded-md ">
+                        <a href="#" class="flex items-center flex-col p-2   rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6 ">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+
+
+                            <span class="ms-3 ">Rechercher</span>
+                        </a>
+                    </li>
+
+
+                    <li class="  hover:text-orang">
+                        <a href="#" class="flex items-center flex-col p-2   rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+
+
+
+                            <span class="ms-3 ">Favoris</span>
+                        </a>
+                    </li>
+                    <li class="  hover:text-orang">
+                        <a href="#" class="flex items-center flex-col p-2   rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" class="h-6 w-6">
+                                <rect width="25" height="25" fill="none" rx="0" ry="0" stroke-width="6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v12m6-6H6" />
+                            </svg>
+
+
+
+
+                            <span class="ms-3 ">Publier</span>
+                        </a>
+                    </li>
+                    <li class="  hover:text-orang">
+                        <a href="#" class="flex items-center flex-col p-2   rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                            </svg>
+
+
+                            <span class="ms-3 ">Messages</span>
+                        </a>
+                    </li>
+                    <li class="  hover:text-orang">
+                        <a href="#" class="flex items-center flex-col p-2   rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+
+
+
+                            <span class="ms-3 ">Compte</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </footer>
+
+
+
+
+
+
+
+        <script>
+            // JavaScript code to fix the input on scroll
+            window.addEventListener('scroll', function () {
+                var inputContainer = document.getElementById('searchContainer');
+                if (window.innerWidth <= 768) {
+                    if (window.scrollY > inputContainer.offsetTop) {
+                        inputContainer.classList.add('fixed-input');
+                    } else {
+                        inputContainer.classList.remove('fixed-input');
+                    }
+                } else {
+                    inputContainer.classList.remove('fixed-input');
+                }
+            });
+        </script>
+
+</body>
+
+</html>
+<!--
+    <div class="  md:mx-auto bg-white border rounded-lg shadow-lg shadow-gray-200 w-full">
+                    <div class="relative"  id="searchContainer" >
+                        <!-- Icône à l'intérieur de la bordure à gauche 
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-gray-500">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div>
+
+                        <!-- Icône à l'intérieur de la bordure à droite 
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-2">
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"
+                                class="w-6 h-6 text-gray-400">
+                                <path d="M16 12 A4 4 0 0 1 12 16 A4 4 0 0 1 8 12 A4 4 0 0 1 16 12 z" />
+                                <path
+                                    d="M13 4.069V2h-2v2.069A8.01 8.01 0 004.069 11H2v2h2.069A8.008 8.008 0 0011 19.931V22h2v-2.069A8.007 8.007 0 0019.931 13H22v-2h-2.069A8.008 8.008 0 0013 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z" />
+                            </svg>
+                        </div>
+
+                        <!-- Champ de saisie 
+                        <input type="text" placeholder="Rechercher"
+                            class="w-full py-2 pl-10 pr-8 border rounded-lg focus:outline-none focus:border-orange-500 placeholder:text-[#708190]" />
+                    </div>
+
+
+                </div>
+-->
