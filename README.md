@@ -9,9 +9,9 @@
 <br/>
 
 </h3>
-<div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-  <img alt="Demo" src="./assets/readme/pc1.png"/>
-  <img alt="Demo" src="./assets/readme/pc2.png"/>
+<div align="center" style="display: flex; justify-content: center;flex-direction: row; align-items: center; margin-top: 10px;">
+  <img alt="Demo" src="./assets/readme/pc1.png" style="width:500px; height: 450px;"/>
+  <img alt="Demo" src="./assets/readme/pc2.png" style="width:500px; height: 450px;"/>
 </div>
 <h3 align="center">
  Vue Tablette
@@ -19,8 +19,8 @@
 
 </h3>
 <div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-  <img alt="Demo" src="./assets/readme/tab1.png"/>
-  <img alt="Demo" src="./assets/readme/tab2.png"/>
+  <img alt="Demo" src="./assets/readme/tab1.png"style="width:500px; height: 700px;"/>
+  <img alt="Demo" src="./assets/readme/tab2.png"style="width:500px; height: 700px;"/>
 </div>
 <h3 align="center">
  Vue Mobile
@@ -28,8 +28,8 @@
 
 </h3>
 <div align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-  <img alt="Demo" src="./assets/readme/mob1.png"/>
-  <img alt="Demo" src="./assets/readme/mob2.png"/>
+  <img alt="Demo" src="./assets/readme/mob1.png" style="width:400px; height: 600px;"/>
+  <img alt="Demo" src="./assets/readme/mob2.png"style="width:400px; height: 600px;"/>
 </div>
 
 # Mon Projet Tailwind CSS
