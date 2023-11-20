@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="flex lg:items-center flex-col md:w-2/3 w-full md:mx-auto gap-1 md:p-0 p-4 bg-white ">
-                <div class="flex lg:items-center flex-col md:w-2/3 w-full md:mx-auto gap-1 md:p-0 p-4 bg-white" id="searchContainer">
+                <div class="flex lg:items-center flex-col lg:w-2/3 w-full md:mx-auto gap-1 lg:p-0 p-4 bg-white" id="searchContainer">
                     <div class="  md:mx-auto bg-white border rounded-lg shadow-lg shadow-gray-200 w-full">
                         <div class="relative">
                             <!-- Icône à l'intérieur de la bordure à gauche -->
@@ -760,7 +760,7 @@
             // JavaScript code to fix the input on scroll
             window.addEventListener('scroll', function () {
                 var inputContainer = document.getElementById('searchContainer');
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     if (window.scrollY > inputContainer.offsetTop) {
                         inputContainer.classList.add('fixed-input');
                     } else {
