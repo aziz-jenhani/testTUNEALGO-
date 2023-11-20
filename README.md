@@ -9,16 +9,16 @@
 <br/>
 
 </h3>
-<div align="center">
+<div align="center" style="flex">
   <img alt="Demo" src="./assets/readme/pc1.png"/>
   <img alt="Demo" src="./assets/readme/pc2.png"/>
 </div>
-<h3 align="center">
+<h3 align="center" >
  Vue Tablette
 <br/>
 
 </h3>
-<div align="center">
+<div align="center" style="flex">
   <img alt="Demo" src="./assets/readme/tab1.png"/>
   <img alt="Demo" src="./assets/readme/tab2.png"/>
 </div>
@@ -27,7 +27,7 @@
 <br/>
 
 </h3>
-<div align="center">
+<div align="center" style="flex">
   <img alt="Demo" src="./assets/readme/mob1.png"/>
   <img alt="Demo" src="./assets/readme/mob2.png"/>
 </div>
@@ -43,7 +43,9 @@ Bienvenue dans mon projet utilisant Tailwind CSS! Ce framework CSS puissant perm
 Pour commencer, assurez-vous d'installer Tailwind CSS via npm. Exécutez la commande suivante dans votre terminal :
 
 ```bash
-npm install tailwindcss
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
 ```
 
 ## Utilisation
