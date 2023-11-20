@@ -10,8 +10,8 @@
 
 </h3>
 <div align="center" style="display: flex; justify-content: center;flex-direction: row; align-items: center; margin-top: 10px; height: 100vh;">
-  <img alt="Demo" src="./assets/readme/pc1.png"/>
-  <img alt="Demo" src="./assets/readme/pc2.png"/>
+  <img alt="Demo" src="./assets/readme/pc1.png" style="width:400px; height: 300px;"/>
+  <img alt="Demo" src="./assets/readme/pc2.png" style="width:400px; height: 300px;"/>
 </div>
 <h3 align="center">
  Vue Tablette
